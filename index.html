@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    model-viewer {
+      width:  100%;
+      height:  600px;
+      margin:  0 auto;
+    }
+    button {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      border:  none;
+      background: red;
+      box-sizing: border-box;
+    }
+    #annotation {
+      background-color: #888888;
+      position: absolute;
+      transform: translate(10px, 20px);
+      border-radius: 10px;
+      padding: 10px;
+    }
+    :not(:defined) > * {
+      display:  none;
+    }
+  </style>
+</head>
+<body>
+  <!--add this in model-viewer for ios: ios-src="assets/Wizard_usdz.usdz" -->
+  <model-viewer src="assets/wizard3.gltf" alt="A 3D model of a moped" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral">
+    <button slot="hotspot-hat" data-position="0.016 1.73 0.078" data-normal="0.27 0.578 0.768">
+      <div id="annotation">This magical hat protects</div>
+    </button>
+  </model-viewer>
+  
+
+</body>
+</html>
